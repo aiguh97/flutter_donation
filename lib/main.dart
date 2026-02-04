@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_donation/app_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_donation/core/constant/app_config.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  final dio = Dio(BaseOptions(baseUrl: AppConfig.apiPatch));
+
   final appRouter = AppRouter();
   runApp(MyApp(appRouter: appRouter));
 }
